@@ -1,14 +1,17 @@
 function singleNumber(nums) {
   // Start coding here
-  let result = 0;
+
   for (let i = 0; i < nums.length; i++) {
-    if (nums[i]) {
-      result++
-    } else {
-      result = 1
+    let result = 0;
+    for (let j = 0; j < nums.length; j++) {
+      if (nums[i] === nums[j]) {
+        result++
+      }
+    }
+    if (result === 1) {
+      return nums[i]
     }
   }
-  return result
 }
 
 let result1 = singleNumber([2, 2, 1]);
